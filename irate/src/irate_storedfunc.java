@@ -9,7 +9,7 @@ public class irate_storedfunc {
   private static Statement s = null;
 
   /** Name of the database */
-  private static String dbName = "OrderManager";
+  private static String dbName = "om";
 
   /**
    * Checks whether the rating is valid or not.
@@ -41,10 +41,10 @@ public class irate_storedfunc {
       e.printStackTrace();
     }
     long r_date = date1.getTime();
-    irate_Connection orderManager = new irate_Connection();
-    orderManager.startConnection("user1", "password", dbName);
-    conn = orderManager.getConnection();
-    s = orderManager.getStatement();
+    irate_Connection om = new irate_Connection();
+    om.startConnection("user1", "password", dbName);
+    conn = om.getConnection();
+    s = om.getStatement();
     irate_DQL dql = new irate_DQL(conn, s);
     java.sql.Date date2 = dql.atten(cust_id, movie_id);
     if(date2 == date11)
@@ -75,10 +75,10 @@ public class irate_storedfunc {
       e.printStackTrace();
     }
     long r_date = date1.getTime();
-    irate_Connection orderManager = new irate_Connection();
-    orderManager.startConnection("user1", "password", dbName);
-    conn = orderManager.getConnection();
-    s = orderManager.getStatement();
+    irate_Connection om = new irate_Connection();
+    om.startConnection("user1", "password", dbName);
+    conn = om.getConnection();
+    s = om.getStatement();
     irate_DQL dql = new irate_DQL(conn, s);
     java.sql.Date date2 = dql.atten(CUST_ID, MOVIE_ID);
     if(date2 == date11)
@@ -99,10 +99,10 @@ public class irate_storedfunc {
    * @return Returns true if customer's endorsement is valid,false otherwise.
    */
   public static boolean isEndorValid(int CUST_ID,int REVIEW_ID) {
-    irate_Connection orderManager = new irate_Connection();
-    orderManager.startConnection("user1", "password", dbName);
-    conn = orderManager.getConnection();
-    s = orderManager.getStatement();
+    irate_Connection om = new irate_Connection();
+    om.startConnection("user1", "password", dbName);
+    conn = om.getConnection();
+    s = om.getStatement();
     irate_DQL dql = new irate_DQL(conn, s);
     int REVIEW_ID_2 = dql.revid(CUST_ID);
     if(REVIEW_ID == REVIEW_ID_2)
